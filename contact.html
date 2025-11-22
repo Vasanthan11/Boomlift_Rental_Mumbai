@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us | Boom Lift & Scissor Lift Rentals in Mumbai</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --clr-1: #1d1616;
+      --clr-2: #8e1616;
+      --clr-3: #d84040;
+      --clr-4: #eeeeee;
+    }
+
+    body {
+      margin: 0;
+      background: #121212;
+      color: var(--clr-4);
+      font-family: system-ui, sans-serif;
+    }
+
+    main { min-height: 60vh; }
+    section { padding: 3rem 0; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      padding-inline: 1.2rem;
+    }
+
+    h1, h2, h3 {
+      font-family: "Agency FB", system-ui, sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.6rem; }
+    p  { line-height: 1.8; }
+
+    /* Contact Info */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .contact-box {
+      background: #1f1f1f;
+      padding: 1.5rem;
+      border: 1px solid #2b2b2b;
+      border-radius: 10px;
+    }
+    .contact-box p {
+      font-size: 1.1rem;
+    }
+
+    /* Red section */
+    .red-section {
+      background: var(--clr-3);
+      color: white;
+      text-align: center;
+    }
+    .red-section p {
+      max-width: 40rem;
+      margin: 1rem auto;
+    }
+
+    .btn {
+      padding: 0.7rem 1.8rem;
+      border-radius: 4px;
+      border: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--clr-1);
+    }
+
+    .btn-primary {
+      background: var(--clr-3);
+      color: white;
+    }
+
+    /* Modal */
+    .enquiry-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 999;
+    }
+    .enquiry-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .enquiry-modal-inner {
+      background: #0d131a;
+      padding: 1.4rem;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border: 1px solid #2a333d;
+      position: relative;
+    }
+    .enquiry-modal-close {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.7rem;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: none;
+      background: #222;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    @media(max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      h1 { font-size: 2.4rem; }
+      h2 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="navbar"></div>
+
+<main>
+
+  <!-- CONTACT INTRO -->
+  <section>
+    <div class="container reveal-left">
+      <h1>Contact Us</h1>
+      <p>
+        Reach out to our rental team for boom lifts, scissor lifts and man lifts across Mumbai.
+        Share job photos, working height and duration — we’ll respond with the right machine and rental quote.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT DETAILS -->
+  <section>
+    <div class="container contact-grid">
+
+      <div class="contact-box reveal-left">
+        <h2>Call Us</h2>
+        <p><strong>+91 99999 99999</strong></p>
+        <p>Mon – Sat, 9 AM to 7 PM</p>
+        <a href="#" class="btn btn-primary js-open-enquiry">Request Call Back</a>
+      </div>
+
+      <div class="contact-box reveal-right">
+        <h2>Email Us</h2>
+        <p>info@boomliftrentalsmumbai.com</p>
+        <p>Send plans/photos for faster response</p>
+        <a href="#" class="btn btn-primary js-open-enquiry">Send Enquiry</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RED SECTION -->
+  <section class="red-section reveal-up">
+    <div class="container">
+      <h2>Quick Enquiry for Mumbai Sites</h2>
+      <p>Just tell us your working height, job location & rental duration. We’ll reply with available boom/scissor lift models.</p>
+      <a href="#" class="btn btn-white js-open-enquiry">Open Enquiry Form</a>
+    </div>
+  </section>
+
+  <!-- EMBED FORM SECTION -->
+  <section>
+    <div class="container reveal-left">
+      <h2>Enquiry Form</h2>
+      <p>Fill the form below — our team will respond quickly.</p>
+      <div id="contact-enquiry-form"></div>
+    </div>
+  </section>
+
+</main>
+
+<div id="footer"></div>
+
+<!-- POPUP FORM -->
+<div class="enquiry-modal" id="enquiry-modal">
+  <div class="enquiry-modal-inner">
+    <button class="enquiry-modal-close js-close-enquiry">✖</button>
+    <div id="popup-enquiry-form"></div>
+  </div>
+</div>
+
+<script>
+  function loadFragment(id, file, callback){
+    fetch(file).then(res => res.text()).then(html => {
+      document.getElementById(id).innerHTML = html;
+      if (callback) callback();
+    });
+  }
+
+  function initModal(){
+    const modal = document.getElementById("enquiry-modal");
+    document.querySelectorAll(".js-open-enquiry").forEach(btn=>{
+      btn.onclick = e=>{ e.preventDefault(); modal.classList.add("open"); }
+    });
+    document.querySelectorAll(".js-close-enquiry").forEach(btn=>{
+      btn.onclick = ()=> modal.classList.remove("open");
+    });
+    modal.onclick = e=>{ if(e.target === modal) modal.classList.remove("open"); }
+  }
+
+  function initScrollReveal(){
+    document.querySelectorAll(".reveal-left, .reveal-right, .reveal-up").forEach(el=>{
+      let obs=new IntersectionObserver(e=>{
+        if(e[0].isIntersecting) el.classList.add("reveal-visible");
+      },{threshold:0.2});
+      obs.observe(el);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", ()=>{
+    loadFragment("navbar", "navbar.html", ()=>initNavbarBehaviour?.());
+    loadFragment("footer", "footer.html");
+    loadFragment("contact-enquiry-form", "form.html", initScrollReveal);
+    loadFragment("popup-enquiry-form", "form.html", initModal);
+    initScrollReveal();
+  });
+</script>
+
+</body>
+</html>

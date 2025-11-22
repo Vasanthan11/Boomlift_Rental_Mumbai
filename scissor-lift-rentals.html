@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Scissor Lift Rentals in Mumbai | Indoor & Outdoor Access Platforms</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --clr-1: #1d1616;
+      --clr-2: #8e1616;
+      --clr-3: #d84040;
+      --clr-4: #eeeeee;
+    }
+
+    body {
+      margin: 0;
+      background: #121212;
+      color: var(--clr-4);
+      font-family: system-ui, sans-serif;
+      font-size: 16px;
+    }
+
+    main { min-height: 60vh; }
+
+    section { padding: 3rem 0; }
+    .tall-section { min-height: 80vh; }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      width: 100%;
+      padding-inline: 1.2rem;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Agency FB", system-ui, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    h1 { font-size: 3.2rem; }
+    h2 { font-size: 2.6rem; }
+    h3 { font-size: 2.4rem; }
+
+    p { line-height: 1.8; font-size: 1.05rem; }
+
+    .section-intro {
+      max-width: 42rem;
+      margin-bottom: 1.6rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.8rem;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      letter-spacing: 0.12em;
+      font-size: 1rem;
+    }
+    .btn-primary {
+      background: var(--clr-3);
+      color: var(--clr-4);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+    .btn-primary:hover {
+      background: var(--clr-2);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--clr-4);
+      border-color: var(--clr-4);
+    }
+    .btn-outline:hover {
+      background: var(--clr-4);
+      color: var(--clr-1);
+    }
+
+    /* ============ HERO ============ */
+    .hero {
+      background:
+        linear-gradient(135deg, rgba(0,0,0,0.7), rgba(10,2,2,0.7)),
+        url("./images/sci04.webp") center/cover no-repeat;
+      color: #ffffff;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.2rem;
+      align-items: center;
+    }
+    .hero-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+    }
+    .hero-badges {
+      margin-top: 1.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+    }
+    .hero-badge {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.3);
+      background: rgba(0,0,0,0.3);
+    }
+    .hero-actions {
+      margin-top: 1.7rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    /* ============ TYPES SECTION ============ */
+    .types-section { background: #181818; }
+    .types-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2rem;
+      margin-top: 2.1rem;
+    }
+    .type-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4rem;
+    }
+    .type-card {
+      background: #1f1f1f;
+      border-radius: 10px;
+      border: 1px solid #2b2b2b;
+      padding: 1.5rem 1.4rem 1.6rem;
+    }
+    .type-card h3 {
+      margin-bottom: 0.6rem;
+    }
+    .type-card p {
+      margin-bottom: 0.7rem;
+    }
+    /* Card text rule */
+    .type-card ul li {
+      font-size: 2.3rem;
+      line-height: 2.2rem;
+    }
+    .types-image {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .types-image img {
+      width: 100%;
+      border-radius: 10px;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    /* ============ RED FULL-WIDTH CTA ============ */
+    .red-section {
+      background: var(--clr-3);
+      color: #ffffff;
+      text-align: center;
+      padding: 2.8rem 0;
+    }
+    .red-section p {
+      max-width: 40rem;
+      margin: 0.8rem auto 1.4rem;
+    }
+    .red-btn {
+      background: #ffffff;
+      color: var(--clr-1);
+      border-color: #ffffff;
+    }
+    .red-btn:hover {
+      background: #f3f3f3;
+      color: var(--clr-1);
+    }
+
+    /* ============ SCROLL GALLERY ============ */
+    .gallery-section { background: #141414; }
+    .scroll-gallery {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      padding-bottom: 0.8rem;
+      margin-top: 1.5rem;
+    }
+    .scroll-gallery::-webkit-scrollbar {
+      height: 6px;
+    }
+    .scroll-gallery::-webkit-scrollbar-thumb {
+      background: #444;
+      border-radius: 999px;
+    }
+    .gallery-img {
+      flex-shrink: 0;
+      width: 380px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 1px solid #2b2b2b;
+    }
+
+    /* ============ USE CASES / TEXT + IMAGE ============ */
+    .usecases-section { background: #121212; }
+    .usecases-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      margin-top: 1.7rem;
+      align-items: flex-start;
+    }
+    .usecases-list {
+      list-style: disc;
+      padding-left: 1.4rem;
+      margin-top: 0.4rem;
+    }
+    .usecases-list li {
+      margin-bottom: 0.5rem;
+      font-size: 1.02rem;
+    }
+    .usecases-img {
+      width: 100%;
+      height: 260px;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.6);
+    }
+
+    /* ============ FAQ ============ */
+    .faq-section { background: #181111; }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.8rem;
+    }
+    .faq-item {
+      background: #231818;
+      border-radius: 10px;
+      border: 1px solid #322121;
+      padding: 1.4rem 1.3rem 1.6rem;
+    }
+
+    /* ============ EMBEDDED ENQUIRY SECTION ============ */
+    .enquiry-section { background: #1b1111; }
+    #scissor-enquiry-form { margin-top: 1.3rem; }
+
+    /* ============ POPUP ENQUIRY MODAL ============ */
+    .enquiry-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 999;
+    }
+    .enquiry-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .enquiry-modal-inner {
+      position: relative;
+      background: #0d131a;
+      padding: 1.4rem 1.2rem 1.6rem;
+      border-radius: 10px;
+      border: 1px solid #2a333d;
+      width: 90%;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .enquiry-modal-close {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.7rem;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: none;
+      background: #222;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* Scroll reveal */
+    .reveal-left, .reveal-right, .reveal-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal-left { transform: translateX(-26px); }
+    .reveal-right { transform: translateX(26px); }
+    .reveal-visible { opacity: 1; transform: translate(0,0); }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .types-grid,
+      .usecases-grid,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding-top: 3rem; padding-bottom: 3rem; }
+      .tall-section { min-height: auto; }
+    }
+
+    @media (max-width: 640px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 2.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR FRAGMENT -->
+  <div id="navbar"></div>
+
+  <main>
+    <!-- SECTION 1: HERO -->
+    <section class="hero tall-section">
+      <div class="container hero-grid">
+        <div class="reveal-left">
+          <h1>Scissor Lift Rentals in Mumbai</h1>
+          <p class="section-intro">
+            Safe and efficient vertical access platforms for indoor and outdoor work in Mumbai.
+            Use our electric and diesel scissor lifts for fit-out, maintenance, shutdown and project work
+            across Mumbai, Navi Mumbai and Thane.
+          </p>
+          <p>
+            Instead of building and dismantling scaffolding, a scissor lift gives your team a stable,
+            guarded platform with faster up–down cycles and controlled movement at height.
+          </p>
+          <div class="hero-badges">
+            <span class="hero-badge">Malls &amp; Retail</span>
+            <span class="hero-badge">IT Parks &amp; Offices</span>
+            <span class="hero-badge">Warehouses &amp; Logistics</span>
+            <span class="hero-badge">Plants &amp; Factories</span>
+          </div>
+          <div class="hero-actions">
+            <a href="#" class="btn btn-primary js-open-enquiry">
+              Send Scissor Lift Requirement
+            </a>
+            <a href="#" class="btn btn-outline js-open-enquiry">
+              Quick Call-back Request
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <img src="./images/sci05.webp" alt="Scissor lift working in Mumbai" class="hero-img" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: TYPES + SMALL IMAGE GRID -->
+    <section class="types-section">
+      <div class="container">
+        <div class="reveal-left">
+          <h2>Types of Scissor Lifts Available in Mumbai</h2>
+          <p class="section-intro">
+            Choose the right machine based on working height, floor loading and where the work is happening.
+            We support everything from indoor fit-outs to heavy outdoor jobs around Mumbai.
+          </p>
+        </div>
+
+        <div class="types-grid">
+          <div class="type-cards reveal-left">
+            <article class="type-card">
+              <h3>Electric Scissor Lifts</h3>
+              <p>
+                Compact, battery-powered platforms ideal for enclosed spaces where emissions
+                and noise must be controlled.
+              </p>
+              <ul>
+                <li>Clean</li>
+                <li>Quiet</li>
+                <li>Compact</li>
+              </ul>
+              <p>
+                Commonly deployed in malls, airports, IT parks, hospitals and data center projects
+                across Mumbai where floor finishes and air quality need protection.
+              </p>
+            </article>
+
+            <article class="type-card">
+              <h3>Diesel Scissor Lifts</h3>
+              <p>
+                Robust machines designed for outdoor and semi-outdoor job sites with rough ground
+                and higher working heights.
+              </p>
+              <ul>
+                <li>High Reach</li>
+                <li>Rough Terrain</li>
+                <li>Heavy Loads</li>
+              </ul>
+              <p>
+                Used for façade access, industrial maintenance, yard work and construction
+                where you need more platform capacity and travel speed.
+              </p>
+            </article>
+          </div>
+
+          <div class="types-image reveal-right">
+            <img src="./images/sci02.png" alt="Electric scissor lift in indoor Mumbai mall" style="background-color: white; height: 250px;"/>
+            <img src="./images/sci08.webp" alt="Diesel scissor lift on outdoor site in Mumbai" style="background-color: white; height: 250px;"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: RED FULL-WIDTH CTA (SHORTER) -->
+    <section class="red-section">
+      <div class="container reveal-up">
+        <h2>Fast Availability Across Mumbai</h2>
+        <p>
+          Tell us your working height, job duration and site location. We’ll match the right scissor lift
+          and share an indicative rental rate with mobilisation details for your Mumbai project.
+        </p>
+        <p>
+          Whether it’s a single-night shutdown inside a mall or a long warehouse fit-out schedule,
+          our team can plan the right machine and support window for your work.
+        </p>
+        <a href="#" class="btn red-btn js-open-enquiry">
+          Talk to the Rentals Team
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 4: HORIZONTAL SCROLL GALLERY (CLICK → POPUP FORM) -->
+    <section class="gallery-section">
+      <div class="container">
+        <div class="reveal-left">
+          <h2>Scissor Lifts in Action Around Mumbai</h2>
+          <p class="section-intro">
+            These examples reflect typical use cases – ceiling work, racking, façade, MEP and signage jobs.
+            Click any image and send your requirement; we’ll suggest a similar platform for your site.
+          </p>
+        </div>
+
+        <div class="scroll-gallery reveal-up">
+          <img src="./images/sc01.webp" alt="Warehouse lighting work" class="gallery-img js-open-enquiry" />
+          <img src="./images/sci03.jpg" alt="Racking installation work" class="gallery-img js-open-enquiry" />
+          <img src="./images/sci05.webp" alt="Mall ceiling maintenance" class="gallery-img js-open-enquiry" />
+          <img src="./images/sci08.webp" alt="Industrial plant shutdown work" class="gallery-img js-open-enquiry" />
+          <img src="./images/sci04.webp" alt="Airport or terminal work" class="gallery-img js-open-enquiry" />
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: USE CASES / EXPLANATION WITH IMAGE -->
+    <section class="usecases-section">
+      <div class="container">
+        <div class="reveal-left">
+          <h2>Where Scissor Lifts Add Value in Mumbai</h2>
+          <p class="section-intro">
+            Scissor lifts are not just “temporary platforms”. Used correctly, they improve safety,
+            reduce project time and give your technicians stable access to critical heights.
+          </p>
+        </div>
+
+        <div class="usecases-grid">
+          <div class="reveal-left">
+            <p>
+              Common use cases include electrical and lighting work, fire alarm and sprinkler installation,
+              chilled water and VRV piping, false ceiling and signage installations.
+            </p>
+            <ul class="usecases-list">
+              <li>Warehouse fit-outs, racking and high-bay lighting in Bhiwandi and Navi Mumbai.</li>
+              <li>Mall atrium and shopfront works in Mumbai retail zones.</li>
+              <li>Ceiling and MEP works inside corporate offices and IT parks.</li>
+              <li>Service bay and assembly line maintenance inside manufacturing plants.</li>
+            </ul>
+            <p>
+              Share your project drawings or site photos – our team will help you decide whether a scissor
+              lift is suitable or if a boom lift or man lift is more appropriate for certain parts of the job.
+            </p>
+            <a href="#" class="btn btn-primary js-open-enquiry">
+              Share site photos & get advice
+            </a>
+          </div>
+
+          <div class="reveal-right">
+            <img src="./images/sci07.webp"
+                 alt="Scissor lift use cases in Mumbai" style="background-color: white; height: 350px;"
+                 class="usecases-img" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: FAQ -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="reveal-left">
+          <h2>Scissor Lift Rental FAQs for Mumbai</h2>
+          <p class="section-intro">
+            A few of the questions we regularly receive from project managers, safety teams
+            and facility heads across Mumbai.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <article class="faq-item reveal-left">
+            <h3>What information do you need to quote?</h3>
+            <p>
+              We typically ask for working height, indoor or outdoor application, estimated rental
+              duration, floor conditions, and whether the work is during regular hours or night shifts.
+              Site photos help us speed up the selection process.
+            </p>
+          </article>
+
+          <article class="faq-item reveal-right">
+            <h3>Can scissor lifts be used on finished floors?</h3>
+            <p>
+              Yes, but we need to understand the floor finish and load capacity. Electric scissor lifts
+              with non-marking tyres are commonly used in malls, showrooms and finished offices.
+            </p>
+          </article>
+
+          <article class="faq-item reveal-left">
+            <h3>Do you provide operators with the machines?</h3>
+            <p>
+              Operator support can be added based on your requirement. Alternatively,
+              your own trained operators can use the machine after basic familiarisation
+              and adherence to safety guidelines.
+            </p>
+          </article>
+
+          <article class="faq-item reveal-right">
+            <h3>How early should I book a scissor lift?</h3>
+            <p>
+              For common heights we can often support on short notice; for multiple machines
+              or long-duration projects, blocking capacity in advance ensures guaranteed availability
+              for your planned schedule in Mumbai.
+            </p>
+          </article>
+        </div>
+
+        <div style="margin-top:1.8rem;" class="reveal-up">
+          <a href="#" class="btn btn-primary js-open-enquiry">
+            Ask a specific scissor lift question
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: EMBEDDED ENQUIRY FORM (still visible if user scrolls) -->
+    <section id="scissor-enquiry" class="enquiry-section">
+      <div class="container">
+        <div class="reveal-up">
+          <h2>Send Your Scissor Lift Requirement</h2>
+          <p class="section-intro">
+            Share your job details below. Our team will respond with the right scissor lift suggestion
+            and a customised rental quote for your Mumbai site.
+          </p>
+        </div>
+        <div id="scissor-enquiry-form"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER FRAGMENT -->
+  <div id="footer"></div>
+
+  <!-- POPUP ENQUIRY MODAL (FORM LOADED VIA FRAGMENT) -->
+  <div class="enquiry-modal" id="enquiry-modal">
+    <div class="enquiry-modal-inner">
+      <button class="enquiry-modal-close js-close-enquiry" aria-label="Close enquiry form">✖</button>
+      <div id="popup-enquiry-form"></div>
+    </div>
+  </div>
+
+  <script>
+  // Navbar behaviour – used on all pages with navbar.html
+  function initNavbarBehaviour() {
+    var header = document.querySelector(".site-header");
+    var toggle = document.querySelector(".navbar__toggle");
+    var mobileMenu = document.querySelector(".navbar-mobile");
+
+    if (!header || !toggle || !mobileMenu) return;
+
+    function openMenu() {
+      header.classList.add("site-header--menu-open");
+      toggle.classList.add("navbar__toggle--active");
+    }
+
+    function closeMenu() {
+      header.classList.remove("site-header--menu-open");
+      toggle.classList.remove("navbar__toggle--active");
+    }
+
+    toggle.addEventListener("click", function () {
+      if (header.classList.contains("site-header--menu-open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // Close menu when a mobile link is clicked
+    mobileMenu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+  }
+
+  function loadFragment(id, url, callback){
+    var target = document.getElementById(id);
+    if (!target) return;
+    fetch(url)
+      .then(r => r.text())
+      .then(html => {
+        target.innerHTML = html;
+        if (typeof callback === "function") callback();
+      })
+      .catch(err => console.error("Fragment load error:", url, err));
+  }
+
+  function initScrollReveal(){
+    var els = document.querySelectorAll(".reveal-left, .reveal-right, .reveal-up");
+    if (!("IntersectionObserver" in window)) {
+      els.forEach(function (el) { el.classList.add("reveal-visible"); });
+      return;
+    }
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal-visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.2});
+    els.forEach(function (el) { obs.observe(el); });
+  }
+
+  function initEnquiryModal(){
+    var modal = document.getElementById("enquiry-modal");
+    if (!modal) return;
+
+    function openModal(e){
+      if (e) e.preventDefault();
+      modal.classList.add("open");
+    }
+    function closeModal(){
+      modal.classList.remove("open");
+    }
+
+    document.querySelectorAll(".js-open-enquiry").forEach(function (btn) {
+      btn.addEventListener("click", openModal);
+    });
+
+    document.querySelectorAll(".js-close-enquiry").forEach(function (btn) {
+      btn.addEventListener("click", closeModal);
+    });
+
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    loadFragment("navbar", "navbar.html", function () {
+      // initialize hamburger AFTER navbar is in the DOM
+      initNavbarBehaviour();
+    });
+
+    loadFragment("footer", "footer.html");
+    loadFragment("scissor-enquiry-form", "form.html");
+    loadFragment("popup-enquiry-form", "form.html", function () {
+      initEnquiryModal();
+    });
+
+    initScrollReveal();
+  });
+</script>
+
+</body>
+</html>

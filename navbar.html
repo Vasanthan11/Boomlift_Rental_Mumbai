@@ -1,0 +1,371 @@
+<!-- NAVBAR START -->
+<header class="site-header">
+  <div class="nav-shell">
+    <nav class="navbar">
+      <!-- Brand / Logo -->
+      <a href="index.html" class="navbar__brand">
+        <div class="navbar__logo-mark">BL</div>
+        <div class="navbar__logo-text">
+          <span class="navbar__title">Boomlift Rentals</span>
+          <span class="navbar__subtitle">Mumbai</span>
+        </div>
+      </a>
+
+      <!-- Hamburger (mobile) -->
+      <button class="navbar__toggle" aria-label="Toggle navigation">
+        <span class="navbar__toggle-line"></span>
+        <span class="navbar__toggle-line"></span>
+        <span class="navbar__toggle-line"></span>
+      </button>
+
+      <!-- Desktop links + WhatsApp -->
+      <div class="navbar__right">
+        <ul class="navbar__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="boom-lift-rentals.html">Boom Lift Rentals</a></li>
+          <li><a href="scissor-lift-rentals.html">Scissor Lift Rentals</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+        <a
+          class="navbar__whatsapp"
+          href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20need%20a%20lift%20rental"
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile dropdown menu -->
+  <div class="navbar-mobile">
+    <div class="navbar-mobile__inner">
+      <ul class="navbar-mobile__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="boom-lift-rentals.html">Boom Lift Rentals</a></li>
+        <li><a href="scissor-lift-rentals.html">Scissor Lift Rentals</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <a
+        class="navbar-mobile__whatsapp"
+        href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20need%20a%20lift%20rental"
+        target="_blank"
+        rel="noopener"
+      >
+        WhatsApp Enquiry
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Global box-sizing */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  :root {
+    --clr-1: #1d1616; /* dark */
+    --clr-2: #8e1616; /* deep red */
+    --clr-3: #d84040; /* accent red */
+    --clr-4: #eeeeee; /* light */
+  }
+
+  body {
+    margin: 0;
+    font-family: "Agency FB", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", sans-serif;
+    background-color: #000; /* change later for your layout */
+  }
+
+   .site-header {
+    position: fixed;       /* stays on scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;         /* keep above all sections */
+    background-color: #1D1616;  /* must add, or it will be transparent */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  }
+
+  /* To prevent content from going under navbar */
+  body {
+    padding-top: 70px;   /* MATCH navbar height */
+  }
+
+  /* FIX mobile view */
+  @media(max-width: 900px){
+    body {
+      padding-top: 60px; /* slightly smaller on mobile */
+    }
+  }
+
+  .nav-shell {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0.6rem 1.2rem;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+
+  /* Brand / Logo */
+
+  .navbar__brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    color: var(--clr-4);
+  }
+
+  .navbar__logo-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 4px;
+    background-color: var(--clr-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+
+  .navbar__logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+  }
+
+  .navbar__title {
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .navbar__subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(238, 238, 238, 0.7);
+  }
+
+  /* Desktop links + button */
+
+  .navbar__right {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+  }
+
+  .navbar__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar__links a {
+    text-decoration: none;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--clr-4);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: background-color 0.2s ease, border-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  .navbar__links a:hover {
+    background-color: var(--clr-2);
+    border-color: var(--clr-3);
+  }
+
+  .navbar__whatsapp {
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.35rem 0.9rem;
+    border-radius: 4px;
+    background-color: var(--clr-3);
+    color: var(--clr-4);
+    border: 1px solid var(--clr-3);
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .navbar__whatsapp:hover {
+    background-color: var(--clr-2);
+    transform: translateY(-1px);
+  }
+
+  /* Hamburger button (mobile) */
+
+  .navbar__toggle {
+    display: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 4px;
+    border: 1px solid var(--clr-2);
+    background-color: var(--clr-1);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .navbar__toggle-line {
+    width: 20px;
+    height: 2px;
+    border-radius: 999px;
+    background-color: var(--clr-4);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+  }
+
+  /* Hamburger → X animation */
+  .navbar__toggle--active .navbar__toggle-line:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .navbar__toggle--active .navbar__toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar__toggle--active .navbar__toggle-line:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  /* Mobile menu */
+
+  .navbar-mobile {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background-color: var(--clr-1);
+    border-bottom: 1px solid var(--clr-2);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .navbar-mobile__inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0.8rem 1.2rem 1rem;
+  }
+
+  .navbar-mobile__links {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .navbar-mobile__links a {
+    display: block;
+    text-decoration: none;
+    font-size: 1.05rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 0.45rem 0.6rem;
+    border-radius: 4px;
+    color: var(--clr-4);
+    background-color: #262020;
+    border: 1px solid #262020;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .navbar-mobile__links a:hover {
+    background-color: var(--clr-2);
+    border-color: var(--clr-3);
+  }
+
+  .navbar-mobile__whatsapp {
+    display: inline-block;
+    margin-top: 0.4rem;
+    text-decoration: none;
+    padding: 0.5rem 0.9rem;
+    border-radius: 4px;
+    background-color: var(--clr-3);
+    color: var(--clr-4);
+    font-size: 1.05rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: 1px solid var(--clr-3);
+  }
+
+  /* Open state */
+  .site-header--menu-open .navbar-mobile {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Responsive */
+
+  @media (max-width: 900px) {
+    .navbar__right {
+      display: none;
+    }
+
+    .navbar__toggle {
+      display: inline-flex;
+    }
+
+    .nav-shell {
+      padding-inline: 1rem;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const header = document.querySelector(".site-header");
+    const toggle = document.querySelector(".navbar__toggle");
+    const mobileLinks = document.querySelectorAll(".navbar-mobile a");
+
+    if (!header || !toggle) return;
+
+    function openMenu() {
+      header.classList.add("site-header--menu-open");
+      toggle.classList.add("navbar__toggle--active");
+    }
+
+    function closeMenu() {
+      header.classList.remove("site-header--menu-open");
+      toggle.classList.remove("navbar__toggle--active");
+    }
+
+    toggle.addEventListener("click", function () {
+      if (header.classList.contains("site-header--menu-open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    mobileLinks.forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+  });
+</script>
+<!-- NAVBAR END -->

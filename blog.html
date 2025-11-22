@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blog | Boom Lift & Scissor Lift Rentals in Mumbai</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --clr-1: #1d1616;
+      --clr-2: #8e1616;
+      --clr-3: #d84040;
+      --clr-4: #eeeeee;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #121212;
+      color: var(--clr-4);
+    }
+
+    main { min-height: 60vh; padding-top: 2rem; }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      width: 100%;
+      padding-inline: 1.2rem;
+    }
+
+    section { padding: 2rem 0; }
+
+    h1, h2, h3 {
+      font-family: "Agency FB", system-ui, sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.6rem; }
+    p  { line-height: 1.8; }
+
+    .section-intro {
+      max-width: 50rem;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    /* BLOG CARD STYLE */
+    .blog-card {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 1.2rem;
+      background: #1b1b1b;
+      border-radius: 10px;
+      margin-bottom: 1.8rem;
+      border: 1px solid #2b2b2b;
+      padding: 1.2rem;
+      transition: transform 0.2s ease;
+    }
+    .blog-card:hover {
+      transform: translateY(-4px);
+      cursor: pointer;
+    }
+    .blog-img {
+      width: 100%;
+      height: 100%;
+      max-height: 165px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .blog-content h3 {
+      font-size: 2.3rem;
+      line-height: 2.3rem;
+      margin-bottom: 0.5rem;
+    }
+    .blog-content p {
+      margin-top: 0.5rem;
+      margin-bottom: 0.7rem;
+      color: #ddd;
+    }
+
+    .blog-number {
+      font-size: 4rem;
+      font-family: "Agency FB";
+      color: var(--clr-3);
+      opacity: 0.5;
+      text-align: right;
+    }
+
+    /* POPUP BUTTON */
+    .btn-primary {
+      padding: 0.6rem 1.4rem;
+      background: var(--clr-3);
+      color: white;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .btn-primary:hover {
+      background: var(--clr-2);
+    }
+
+    /* POPUP MODAL FIX */
+    .enquiry-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 999;
+    }
+    .enquiry-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .enquiry-modal-inner {
+      position: relative;
+      background: #0d131a;
+      padding: 1.4rem;
+      border-radius: 10px;
+      border: 1px solid #2a333d;
+      width: 90%;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .enquiry-modal-close {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.7rem;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: #222;
+      color: #fff;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 768px) {
+      .blog-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .blog-number { text-align: center; margin-top: 1rem; }
+      h1 { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="navbar"></div>
+
+  <main>
+    <section>
+      <div class="container reveal-left">
+        <h1>Rental Insights & Updates</h1>
+        <p class="section-intro">
+          Practical tips, safety guidance and real site examples for using boom lifts,
+          scissor lifts & man lifts in Mumbai. Click any blog to send a request or ask a question.
+        </p>
+      </div>
+
+      <div class="container">
+
+        <!-- BLOG CARD 1 -->
+        <article class="blog-card js-open-enquiry">
+          <img src="./images/sc01.webp" class="blog-img">
+          <div class="blog-content">
+            <h3>Benefits of Using Scissor Lifts Over Scaffolding</h3>
+            <p>Time-saving, safer & cleaner compared to traditional scaffolding setups indoors.</p>
+            <a href="#" class="btn-primary js-open-enquiry">Send Enquiry</a>
+          </div>
+          <div class="blog-number">01</div>
+        </article>
+
+        <!-- BLOG CARD 2 -->
+        <article class="blog-card js-open-enquiry">
+          <img src="./images/004.webp" class="blog-img">
+          <div class="blog-content">
+            <h3>How Much Height Can a Boom Lift Reach?</h3>
+            <p>Some models go beyond 120 ft for high-reach industrial work in Mumbai.</p>
+            <a href="#" class="btn-primary js-open-enquiry">Request Quote</a>
+          </div>
+          <div class="blog-number">02</div>
+        </article>
+
+        <!-- BLOG CARD 3 -->
+        <article class="blog-card js-open-enquiry">
+          <img src="./images/sci03.jpg" class="blog-img">
+          <div class="blog-content">
+            <h3>Choosing Between Electric & Diesel Scissor Lifts</h3>
+            <p>Indoor vs outdoor worksite – this guide helps you choose correctly.</p>
+            <a href="#" class="btn-primary js-open-enquiry">Quick Call Back</a>
+          </div>
+          <div class="blog-number">03</div>
+        </article>
+
+        <!-- BLOG CARD 4 -->
+        <article class="blog-card js-open-enquiry">
+          <img src="./images/003.png" class="blog-img">
+          <div class="blog-content">
+            <h3>Safety Checklist for Work at Height</h3>
+            <p>Control lines, harness points and platform load planning.</p>
+            <a href="#" class="btn-primary js-open-enquiry">Send Requirement</a>
+          </div>
+          <div class="blog-number">04</div>
+        </article>
+
+        <!-- BLOG CARD 5 -->
+        <article class="blog-card js-open-enquiry">
+          <img src="./images/sci05.webp" class="blog-img">
+          <div class="blog-content">
+            <h3>Where Scissor Lifts Are Used in Mumbai</h3>
+            <p>Malls, airports, factories, IT parks, warehouses & more.</p>
+            <a href="#" class="btn-primary js-open-enquiry">Ask a Question</a>
+          </div>
+          <div class="blog-number">05</div>
+        </article>
+
+        <!-- BLOG CARD 6 -->
+        <article class="blog-card js-open-enquiry">
+          <img src="./images/002.png" class="blog-img">
+          <div class="blog-content">
+            <h3>How Rentals Work in Mumbai</h3>
+            <p>Process overview – from enquiry to deployment & support.</p>
+            <a href="#" class="btn-primary js-open-enquiry">Get Quote</a>
+          </div>
+          <div class="blog-number">06</div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+
+  <!-- POPUP FORM -->
+  <div class="enquiry-modal" id="enquiry-modal">
+    <div class="enquiry-modal-inner">
+      <button class="enquiry-modal-close js-close-enquiry">✖</button>
+      <div id="popup-enquiry-form"></div>
+    </div>
+  </div>
+
+<script>
+  // Navbar behaviour – same function reused
+  function initNavbarBehaviour() {
+    var header = document.querySelector(".site-header");
+    var toggle = document.querySelector(".navbar__toggle");
+    var mobileMenu = document.querySelector(".navbar-mobile");
+
+    if (!header || !toggle || !mobileMenu) return;
+
+    function openMenu() {
+      header.classList.add("site-header--menu-open");
+      toggle.classList.add("navbar__toggle--active");
+    }
+
+    function closeMenu() {
+      header.classList.remove("site-header--menu-open");
+      toggle.classList.remove("navbar__toggle--active");
+    }
+
+    toggle.addEventListener("click", function () {
+      if (header.classList.contains("site-header--menu-open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    mobileMenu.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+  }
+
+  // Load fragments
+  function loadFragment(id, file, callback){
+    fetch(file)
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById(id).innerHTML = html;
+        if (typeof callback === "function") callback();
+      });
+  }
+
+  // (optional) simple reveal – you already use reveal classes in other pages
+  function initScrollReveal(){
+    var els = document.querySelectorAll(".reveal-left, .reveal-right, .reveal-up");
+    if (!("IntersectionObserver" in window)) {
+      els.forEach(function (el) { el.classList.add("reveal-visible"); });
+      return;
+    }
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal-visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {threshold: 0.2});
+    els.forEach(function (el) { obs.observe(el); });
+  }
+
+  // Modal logic (all cards + buttons open popup form)
+  function initModal(){
+    const modal=document.getElementById("enquiry-modal");
+    if (!modal) return;
+
+    function openModal(e){
+      if (e) e.preventDefault();
+      modal.classList.add("open");
+    }
+    function closeModal(){
+      modal.classList.remove("open");
+    }
+
+    document.querySelectorAll(".js-open-enquiry, .blog-card").forEach(btn=>{
+      btn.addEventListener("click", openModal);
+    });
+
+    document.querySelectorAll(".js-close-enquiry").forEach(btn=>{
+      btn.addEventListener("click", closeModal);
+    });
+
+    modal.addEventListener("click", function(e){
+      if (e.target === modal) closeModal();
+    });
+  }
+
+  // Initialize
+  document.addEventListener("DOMContentLoaded", function (){
+    loadFragment("navbar", "navbar.html", function () {
+      initNavbarBehaviour();  // attach hamburger behaviour
+    });
+
+    loadFragment("footer", "footer.html");
+    loadFragment("popup-enquiry-form", "form.html", function(){
+      initModal();
+    });
+
+    initScrollReveal();
+  });
+</script>
+
+
+</body>
+</html>

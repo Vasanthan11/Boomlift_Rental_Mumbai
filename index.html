@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Boomlift Rentals Mumbai | Boom, Scissor & Man Lift Hire</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    /* GLOBAL RESET & BASE */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --clr-1: #1d1616;
+      --clr-2: #8e1616;
+      --clr-3: #d84040;
+      --clr-4: #eeeeee;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background-color: #121212;
+      color: var(--clr-4);
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    main {
+      min-height: 60vh;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding-inline: 1.2rem;
+      width: 100%;
+    }
+
+    section {
+      padding: 3.2rem 0;
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0;
+      font-family: "Agency FB", system-ui, sans-serif;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    h1 { font-size: 3.2rem; }
+    h2 { font-size: 2.5rem; }   /* >= 1.8rem */
+    h3 { font-size: 2.3rem; }   /* >= 1.8rem */
+
+    p {
+      margin: 0 0 1rem;
+      line-height: 1.8;
+      font-size: 1.06rem;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.7rem 1.6rem;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease,
+        transform 0.2s ease, box-shadow 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--clr-3);
+      border-color: var(--clr-3);
+      color: var(--clr-4);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--clr-2);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border-color: var(--clr-4);
+      color: var(--clr-4);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--clr-4);
+      color: var(--clr-1);
+    }
+
+    /* HERO SECTION WITH VIDEO BACKGROUND (SECTION 1) */
+    .hero-section {
+      position: relative;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      color: #ffffff;
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.4)
+      );
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr);
+      gap: 2.2rem;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: #ffd2d2;
+      margin-bottom: 0.9rem;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-title {
+      font-size: 3.4rem;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
+    }
+
+    .hero-subtitle {
+      color: #ffffff;
+      max-width: 38rem;
+      font-size: 1.15rem;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-meta {
+      margin-top: 1.2rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #f1dddd;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-actions {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* SECTION LABELS */
+    .section-label {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #ffb0b0;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .section-intro {
+      color: #f1f1f1;
+      max-width: 40rem;
+      font-size: 1.08rem;
+    }
+
+    /* SECTION 2 – OUR RENTAL FLEET */
+    .fleet-section {
+      background: #141414;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .cards-3 {
+      margin-top: 2.1rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border-radius: 8px;
+      padding: 1.4rem 1.3rem 1.6rem;
+      border: 1px solid #262626;
+    }
+
+    .card h3 {
+      font-size: 1.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 1.05rem;
+      color: #e0e0e0;
+      margin-bottom: 0.8rem;
+    }
+
+    .card ul {
+      margin: 0 0 1rem;
+      padding-left: 1.2rem;
+      font-size: 1.2rem;
+      line-height: 2.2rem;
+      color: #d0d0d0;
+    }
+
+    /* SECTION 3 – FULL RED BACKGROUND CTA */
+    .red-cta-section {
+      background-color: var(--clr-3);
+      color: #ffffff;
+      /* min-height: 80vh; */
+      display: flex;
+      align-items: center;
+    }
+
+    .red-cta-section .section-intro {
+      color: #ffecec;
+    }
+
+    .red-cta-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .red-cta-side {
+      background: rgba(0, 0, 0, 0.18);
+      border-radius: 10px;
+      padding: 1.5rem 1.4rem;
+      border: 1px solid rgba(0, 0, 0, 0.25);
+    }
+
+    .red-cta-side h3 {
+      font-size: 1.9rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .red-cta-side p {
+      font-size: 1.3rem;
+    }
+
+    .red-cta-bullets {
+      margin: 0.6rem 0 1rem;
+      padding-left: 1.2rem;
+      line-height: 2.2rem;
+      font-size: 1.2rem;
+    }
+
+    /* SECTION 4 – WHY CHOOSE US (DARK) */
+    .why-section {
+      background: #181111;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.6rem;
+      margin-top: 2rem;
+    }
+
+    .why-item {
+      background: #211818;
+      border-radius: 8px;
+      padding: 1.3rem 1.2rem 1.4rem;
+      border: 1px solid #2e2020;
+    }
+
+    .why-item h3 {
+      font-size: 1.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .why-item p {
+      font-size: 1.3rem;
+      color: #f0e3e3;
+    }
+
+    /* SECTION 5 – WHERE WE WORK */
+    .industries-section {
+      background: #13171d;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.9rem;
+    }
+
+    .industry-box {
+      border-radius: 8px;
+      padding: 1.1rem 1.1rem 1.3rem;
+      background: #10151d;
+      border: 1px solid #212b37;
+    }
+
+    .industry-box h3 {
+      font-size: 1.9rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .industry-box p {
+      font-size: 1.3rem;
+      color: #cfd5dd;
+    }
+
+    /* SECTION 6 – GALLERY */
+    .gallery-section {
+      background: #141414;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .gallery-grid {
+      margin-top: 1.9rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      height: 200px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #262626, #3a1c1c);
+      cursor: pointer;
+      border: 1px solid #2d2d2d;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
+    }
+
+    .gallery-item-title {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .gallery-item-tag {
+      font-size: 1rem;
+      color: #e3e3e3;
+    }
+
+    /* SECTION 7 – HOME ENQUIRY (FORM FRAGMENT) */
+    .home-enquiry-wrap {
+      background: #181111;
+      padding-top: 3.4rem;
+      padding-bottom: 3.6rem;
+    }
+
+    .home-enquiry-wrap .section-title {
+      text-align: center;
+    }
+
+    .home-enquiry-header {
+      text-align: center;
+      margin-bottom: 1.9rem;
+    }
+
+    .home-enquiry-header p {
+      margin: 0.5rem auto 0;
+      font-size: 1.05rem;
+      color: #d3c9c9;
+      max-width: 40rem;
+    }
+
+    /* SCROLL REVEAL */
+    .reveal-left,
+    .reveal-right,
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal-left {
+      transform: translateX(-26px);
+    }
+
+    .reveal-right {
+      transform: translateX(26px);
+    }
+
+    .reveal-visible {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    /* ENQUIRY MODAL */
+    .enquiry-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 999;
+      padding: 1rem;
+    }
+
+    .enquiry-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .enquiry-modal-inner {
+      position: relative;
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      background: #0d131a;
+      border-radius: 8px;
+      border: 1px solid #2a333d;
+      padding: 1.4rem 1.2rem 1.7rem;
+    }
+
+    .enquiry-modal-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.6rem;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: none;
+      background: #222;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-section {
+        min-height: 80vh;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards-3,
+      .why-grid,
+      .industries-grid,
+      .gallery-grid,
+      .red-cta-row {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .red-cta-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      section {
+        padding: 2.8rem 0;
+      }
+
+      .cards-3,
+      .why-grid,
+      .industries-grid,
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1.hero-title {
+        font-size: 2.5rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .enquiry-modal-inner {
+        padding-inline: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR FRAGMENT -->
+  <div id="navbar"></div>
+
+  <main>
+    <!-- SECTION 1: HERO WITH VIDEO -->
+    <section class="hero-section">
+      <!-- Replace src with your actual video path -->
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="./images/main-video.mp4" type="video/mp4">
+      </video>
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+        <div class="hero-grid">
+          <div class="reveal-left">
+            <div class="hero-eyebrow">
+              Boom Lift · Scissor Lift · Man Lift Rentals in Mumbai
+            </div>
+            <h1 class="hero-title">
+              Safe & Reliable Height Access Rentals Across Mumbai.
+            </h1>
+            <p class="hero-subtitle">
+              Hire articulated and telescopic boom lifts, electric and diesel scissor lifts,
+              and vertical man lifts for projects across Mumbai, Navi Mumbai and Thane.
+            </p>
+            <p class="hero-meta">
+              INDUSTRIAL · COMMERCIAL · MAINTENANCE · SHUTDOWN PROJECTS
+            </p>
+            <div class="hero-actions">
+              <a href="#home-enquiry" class="btn btn-primary">
+                Get a rental quote
+              </a>
+              <a href="#" class="btn btn-outline js-open-enquiry">
+                Quick enquiry popup
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: OUR RENTAL FLEET -->
+    <section class="fleet-section">
+      <div class="container">
+        <div class="reveal-left">
+          <div class="section-label">Our Rental Fleet in Mumbai</div>
+          <h2 class="section-title">Boom Lifts, Scissor Lifts & Man Lifts for Every Height.</h2>
+          <p class="section-intro">
+            From compact electric scissors for malls and warehouses to high-reach telescopic booms
+            for infrastructure and industrial shutdowns, our fleet is tailored to Mumbai conditions.
+          </p>
+        </div>
+
+        <div class="cards-3">
+          <article class="card reveal-left">
+            <h3>Boom Lift Rentals</h3>
+            <p>
+              Articulated & telescopic boom lifts for façade work, steel erection,
+              signage and MEP installation across Mumbai.
+            </p>
+            <ul>
+              <li>Up-and-over access over obstacles</li>
+              <li>Precise proportional controls</li>
+              <li>Outdoor and industrial applications</li>
+            </ul>
+            <a href="boom-lift-rentals.html" class="btn btn-outline js-open-enquiry">
+              Enquire for boom lifts
+            </a>
+          </article>
+
+          <article class="card reveal-up">
+            <h3>Scissor Lift Rentals</h3>
+            <p>
+              Electric and diesel scissor lifts for safe, vertical access in factories,
+              data centers and commercial spaces in Mumbai.
+            </p>
+            <ul>
+              <li>Safer & faster than scaffolding</li>
+              <li>Ideal for fit-outs & maintenance</li>
+              <li>Flexible daily to monthly rentals</li>
+            </ul>
+            <a href="scissor-lift-rentals.html" class="btn btn-outline js-open-enquiry">
+              Enquire for scissor lifts
+            </a>
+          </article>
+
+          <article class="card reveal-right">
+            <h3>Man Lifts / Vertical Mast</h3>
+            <p>
+              Compact man lifts and mast booms for tight indoor spaces where floors and access
+              in Mumbai buildings are restricted.
+            </p>
+            <ul>
+              <li>Narrow aisle & small footprint</li>
+              <li>Ideal for malls, airports, IT parks</li>
+              <li>Battery & electric options</li>
+            </ul>
+            <a href="#" class="btn btn-outline js-open-enquiry">
+              Talk to a Mumbai specialist
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: FULL RED BACKGROUND CTA -->
+    <section class="red-cta-section" >
+      <div class="container">
+        <div class="red-cta-row">
+          <div class="reveal-left">
+            <div class="section-label">Fast rental support in Mumbai</div>
+            <h2 class="section-title">Same-Day Response for Active Jobsites.</h2>
+            <p class="section-intro">
+              Share your working height, job duration and access conditions. Our rentals team
+              will match the right boom lift or scissor lift for your site in Mumbai and schedule
+              the machine based on your shift timings.
+            </p>
+            <div style="margin-top: 1.6rem;">
+              <a href="#" class="btn btn-primary js-open-enquiry" style="background-color: var(--clr-4); color: var(--clr-2);">
+                Tell us about your job
+              </a>
+            </div>
+          </div>
+
+          <aside class="red-cta-side reveal-right" style="background-color: var(--clr-1);">
+            <h3>What you get with our rentals</h3>
+            <p>Powered access support designed around real site constraints in Mumbai:</p>
+            <ul class="red-cta-bullets">
+              <li>Articulated & telescopic booms up to 120 ft*</li>
+              <li>Indoor & outdoor scissor lift options</li>
+              <li>Short-term, long-term & project rentals</li>
+              <li>Operator & safety guidance on request</li>
+            </ul>
+            <p>
+              We coordinate with your engineers, safety team and facility managers to
+              minimize disruption and keep work at height controlled.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: WHY CHOOSE US -->
+    <section class="why-section">
+      <div class="container">
+        <div class="reveal-left">
+          <div class="section-label">Why Mumbai contractors choose us</div>
+          <h2 class="section-title">Focused on Safe, Hassle-Free Rentals.</h2>
+          <p class="section-intro">
+            Our approach is built around safe working at height, responsive support and
+            transparent pricing for projects all over Mumbai.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-item reveal-left">
+            <h3>Safety-first approach</h3>
+            <p>
+              Machines are inspected regularly with documented checks before dispatch.
+              We can support toolbox talks and basic safety orientations at your site in Mumbai.
+            </p>
+          </div>
+          <div class="why-item reveal-up">
+            <h3>Quick availability</h3>
+            <p>
+              Dedicated rental fleet for the Mumbai region with fast turnaround on quotations
+              and mobilization to reduce project downtime.
+            </p>
+          </div>
+          <div class="why-item reveal-right">
+            <h3>Experienced team</h3>
+            <p>
+              Our coordinators understand local access challenges, permits and timings,
+              from night-shift shutdowns to mall working hours in Mumbai.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top:1.9rem;" class="reveal-up">
+          <a href="#" class="btn btn-primary js-open-enquiry">
+            Discuss your Mumbai project
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: WHERE WE WORK -->
+    <section class="industries-section">
+      <div class="container">
+        <div class="reveal-left">
+          <div class="section-label">Where our machines work</div>
+          <h2 class="section-title">Trusted Across Key Locations in Mumbai.</h2>
+          <p class="section-intro">
+            We support contractors, facility managers and OEMs across Mumbai, Navi Mumbai
+            and Thane for a wide range of applications.
+          </p>
+        </div>
+
+        <div class="industries-grid">
+          <div class="industry-box reveal-left">
+            <h3>Commercial & IT Parks</h3>
+            <p>
+              Glass cleaning, façade maintenance and signage works at corporate parks,
+              SEZs and tech campuses in Mumbai.
+            </p>
+          </div>
+          <div class="industry-box reveal-up">
+            <h3>Industrial Plants & Refineries</h3>
+            <p>
+              Turnaround, shutdown and maintenance jobs at plants, refineries and power
+              projects around Navi Mumbai and Thane.
+            </p>
+          </div>
+          <div class="industry-box reveal-right">
+            <h3>Warehouses & Logistics Hubs</h3>
+            <p>
+              Racking, MHE integration, lighting and sprinkler work in large warehouses
+              and cold storage facilities.
+            </p>
+          </div>
+          <div class="industry-box reveal-left">
+            <h3>Retail, Malls & Airports</h3>
+            <p>
+              Interior fit-out, HVAC, fire-fighting and signage work with minimal
+              disruption to visitors.
+            </p>
+          </div>
+          <div class="industry-box reveal-up">
+            <h3>Infrastructure & Metro</h3>
+            <p>
+              Elevated station, bridge and flyover work where safe access to height is critical.
+            </p>
+          </div>
+          <div class="industry-box reveal-right">
+            <h3>Events & Stadia</h3>
+            <p>
+              Temporary structures, lighting rigs and media installations for events and sports venues in Mumbai.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top:1.9rem;" class="reveal-up">
+          <a href="#" class="btn btn-primary js-open-enquiry">
+            Plan a rental for your site
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: PROJECT GALLERY -->
+    <section class="gallery-section">
+      <div class="container">
+        <div class="reveal-left">
+          <div class="section-label">Project snapshots</div>
+          <h2 class="section-title">Boom & Scissor Lifts Working Across Mumbai.</h2>
+          <p class="section-intro">
+            A glimpse of typical applications where our access platforms help teams
+            finish work at height safer and faster.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item reveal-left gallery-item-click" style="background-image: url(./images/002.png);background-size: contain;">
+            <div>
+              <!-- <div class="gallery-item-title">Façade access – Andheri</div> -->
+              <!-- <div class="gallery-item-tag">Articulated boom lift for glass replacement</div> -->
+            </div>
+          </div>
+          <div class="gallery-item reveal-up gallery-item-click"style="background-image: url(./images/003.png);background-size: cover;">
+            <div>
+              <!-- <div class="gallery-item-title">Warehouse fit-out – Bhiwandi</div> -->
+              <!-- <div class="gallery-item-tag">Electric scissor lift for racking & lighting</div> -->
+            </div>
+          </div>
+          <div class="gallery-item reveal-right gallery-item-click"style="background-image: url(./images/004.webp);background-size: cover;">
+            <div>
+              <!-- <div class="gallery-item-title">Mall maintenance – Navi Mumbai</div> -->
+              <!-- <div class="gallery-item-tag">Compact man lift for atrium work</div> -->
+            </div>
+          </div>
+          <div class="gallery-item reveal-left gallery-item-click"style="background-image: url(./images/sci02.png);background-size: cover;">
+            <div>
+              <!-- <div class="gallery-item-title">Industrial shutdown – Thane</div> -->
+              <!-- <div class="gallery-item-tag">Telescopic booms for stack maintenance</div> -->
+            </div>
+          </div>
+          <div class="gallery-item reveal-up gallery-item-click"style="background-image: url(./images/sci04.webp);background-size: cover;">
+            <div>
+              <!-- <div class="gallery-item-title">Airport services – Mumbai</div> -->
+              <!-- <div class="gallery-item-tag">Scissor lifts for ceiling and MEP works</div> -->
+            </div>
+          </div>
+          <div class="gallery-item reveal-right gallery-item-click"style="background-image: url(./images/bb2.webp);background-size: cover;">
+            <div>
+              <!-- <div class="gallery-item-title">Metro station work – Mumbai</div> -->
+              <!-- <div class="gallery-item-tag">Boom lifts for elevated platform finishing</div> -->
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:1.9rem;" class="reveal-up">
+          <a href="#" class="btn btn-primary js-open-enquiry">
+            Use this team for my Mumbai site
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: HOME EMBEDDED ENQUIRY FORM (FRAGMENT) -->
+    <section class="home-enquiry-wrap" id="home-enquiry">
+      <div class="container">
+        <div class="home-enquiry-header reveal-up">
+          <div class="section-label">Mumbai rental enquiry</div>
+          <h2 class="section-title">Tell Us About Your Height Access Requirement.</h2>
+          <p>
+            Fill in the enquiry form below and we’ll revert with the right machine suggestion
+            and rental quote for your site in Mumbai.
+          </p>
+        </div>
+
+        <!-- form.html will be loaded inside here -->
+        <div id="home-enquiry-form"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER FRAGMENT -->
+  <div id="footer"></div>
+
+  <!-- MODAL FOR POPUP ENQUIRY (ALSO USES form.html) -->
+  <div class="enquiry-modal" id="enquiry-modal">
+    <div class="enquiry-modal-inner">
+      <button class="enquiry-modal-close js-close-enquiry" aria-label="Close enquiry form">✖</button>
+      <div id="popup-enquiry-form"></div>
+    </div>
+  </div>
+
+  <script>
+    // Fragment loader (navbar, footer, forms)
+    function loadFragment(targetId, url, callback) {
+      var container = document.getElementById(targetId);
+      if (!container) return;
+
+      fetch(url)
+        .then(function (response) {
+          return response.text();
+        })
+        .then(function (html) {
+          container.innerHTML = html;
+          if (typeof callback === "function") {
+            callback();
+          }
+        })
+        .catch(function (error) {
+          console.error("Error loading fragment:", url, error);
+        });
+    }
+
+    // NAVBAR BEHAVIOUR (for navbar.html that uses .navbar__toggle + .navbar-mobile)
+    function initNavbarBehaviour() {
+      var header = document.querySelector(".site-header");
+      var toggle = document.querySelector(".navbar__toggle");
+      var mobileMenu = document.querySelector(".navbar-mobile");
+
+      if (!header || !toggle || !mobileMenu) return;
+
+      function openMenu() {
+        header.classList.add("site-header--menu-open");
+        toggle.classList.add("navbar__toggle--active");
+      }
+
+      function closeMenu() {
+        header.classList.remove("site-header--menu-open");
+        toggle.classList.remove("navbar__toggle--active");
+      }
+
+      toggle.addEventListener("click", function () {
+        if (header.classList.contains("site-header--menu-open")) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      mobileMenu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+      });
+    }
+
+    // SCROLL REVEAL
+    function initScrollReveal() {
+      var revealEls = [].slice.call(
+        document.querySelectorAll(".reveal-left, .reveal-right, .reveal-up")
+      );
+
+      if (!("IntersectionObserver" in window)) {
+        revealEls.forEach(function (el) {
+          el.classList.add("reveal-visible");
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("reveal-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      revealEls.forEach(function (el) {
+        observer.observe(el);
+      });
+    }
+
+    // POPUP ENQUIRY LOGIC
+    function initEnquiryModal() {
+      var modal = document.getElementById("enquiry-modal");
+      if (!modal) return;
+
+      function openEnquiryModal(e) {
+        if (e) e.preventDefault();
+        modal.classList.add("open");
+      }
+
+      function closeEnquiryModal() {
+        modal.classList.remove("open");
+      }
+
+      // Buttons with js-open-enquiry
+      var ctaButtons = document.querySelectorAll(".js-open-enquiry");
+      ctaButtons.forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+          openEnquiryModal(e);
+        });
+      });
+
+      // Gallery items also open modal
+      var galleryItems = document.querySelectorAll(".gallery-item-click");
+      galleryItems.forEach(function (el) {
+        el.addEventListener("click", function () {
+          openEnquiryModal();
+        });
+      });
+
+      // Close buttons
+      var closeButtons = document.querySelectorAll(".js-close-enquiry");
+      closeButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          closeEnquiryModal();
+        });
+      });
+
+      // Click on overlay to close
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          closeEnquiryModal();
+        }
+      });
+    }
+
+    // INIT ON LOAD
+    document.addEventListener("DOMContentLoaded", function () {
+      loadFragment("navbar", "navbar.html", function () {
+        initNavbarBehaviour();
+      });
+
+      loadFragment("footer", "footer.html");
+      loadFragment("home-enquiry-form", "form.html", function () {
+        initScrollReveal();
+      });
+      loadFragment("popup-enquiry-form", "form.html");
+
+      initScrollReveal();
+      initEnquiryModal();
+    });
+  </script>
+</body>
+</html>

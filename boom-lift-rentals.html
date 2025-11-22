@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Boom Lift Rentals in Mumbai | Articulated & Telescopic Boom Lifts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    /* GLOBAL RESET & BASE */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    :root {
+      --clr-1: #1d1616;
+      --clr-2: #8e1616;
+      --clr-3: #d84040;
+      --clr-4: #eeeeee;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background-color: #121212;
+      color: var(--clr-4);
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    main {
+      min-height: 60vh;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding-inline: 1.2rem;
+      width: 100%;
+    }
+
+    section {
+      padding: 3rem 0;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Agency FB", system-ui, sans-serif;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 { font-size: 3.2rem; }
+    h2 { font-size: 2.6rem; } /* >= 2.3rem */
+    h3 { font-size: 2.4rem; } /* >= 2.3rem */
+
+    p {
+      margin: 0 0 1rem;
+      line-height: 1.8;
+      font-size: 1.08rem;
+    }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.8rem;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease,
+        transform 0.2s ease, box-shadow 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--clr-3);
+      border-color: var(--clr-3);
+      color: var(--clr-4);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--clr-2);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border-color: var(--clr-4);
+      color: var(--clr-4);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--clr-4);
+      color: var(--clr-1);
+    }
+
+    /* SECTION LABELS */
+    .section-label {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #ffb0b0;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-size: 2.6rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .section-intro {
+      color: #f1f1f1;
+      max-width: 40rem;
+      font-size: 1.08rem;
+    }
+
+    /* SECTION 1 – HERO (IMAGE BACKGROUND) */
+    .boom-hero-section {
+      position: relative;
+      background:
+        linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(10, 2, 2, 0.7)),
+        url("./images/bb0.jpg") center/cover no-repeat;
+      color: #ffffff;
+    }
+
+    .boom-hero-section .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .boom-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    .boom-hero-eyebrow {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: #ffd2d2;
+      margin-bottom: 0.9rem;
+    }
+
+    .boom-hero-title {
+      font-size: 3.3rem;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+
+    .boom-hero-subtitle {
+      color: #ffffff;
+      max-width: 38rem;
+      font-size: 1.1rem;
+    }
+
+    .boom-hero-meta {
+      margin-top: 1.1rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #f3d7d7;
+    }
+
+    .boom-hero-actions {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .boom-hero-image-card {
+      background: rgba(12, 12, 12, 0.85);
+      border-radius: 10px;
+      padding: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    .boom-hero-img {
+      width: 100%;
+      border-radius: 8px;
+      display: block;
+      object-fit: cover;
+      height: 220px;
+      margin-bottom: 0.8rem;
+    }
+
+    .boom-hero-img-caption {
+      font-size: 0.95rem;
+      color: #f5f5f5;
+    }
+
+    /* CARD BASE – APPLYING YOUR RULE:
+       Line-height: 2.2rem, font-size >= 2.3rem INSIDE CARDS ONLY */
+    .boom-card-text {
+      font-size: 1.6rem;
+      line-height: 2.2rem;
+    }
+
+    /* SECTION 2 – TYPES OF BOOM LIFTS */
+    .boom-types-section {
+      background: #141414;
+    }
+
+    .boom-types-grid {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.8rem;
+    }
+
+    .boom-type-card {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 1.6rem 1.5rem;
+      border: 1px solid #262626;
+    }
+
+    .boom-type-card h3 {
+      margin-bottom: 0.7rem;
+    }
+
+    .boom-type-card p {
+      margin-bottom: 0.9rem;
+      font-size: 1.05rem;
+    }
+
+    .boom-type-card ul {
+      margin: 0 0 0.9rem;
+      padding-left: 1.3rem;
+      font-size: 1.03rem;
+      color: #dfdfdf;
+    }
+
+    /* apply your card font + line-height to the key bullet block */
+    .boom-type-card ul li {
+      font-size: 1.6rem;
+      line-height: 2.5rem;
+    }
+
+    .boom-type-meta {
+      font-size: 1.02rem;
+      color: #d3d3d3;
+    }
+
+    /* SECTION 3 – APPLICATIONS WITH IMAGES */
+    .boom-applications-section {
+      background: #181111;
+    }
+
+    .boom-app-grid {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.6rem;
+    }
+
+    .boom-app-card {
+      background: #211818;
+      border-radius: 10px;
+      padding: 1.3rem 1.2rem 1.5rem;
+      border: 1px solid #2e2020;
+    }
+
+    .boom-app-img {
+      width: 100%;
+      height: 180px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-bottom: 0.8rem;
+    }
+
+    .boom-app-card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .boom-app-card p {
+      font-size: 1.02rem;
+      color: #f0e3e3;
+    }
+
+    /* apply your card font + line-height to highlight text area */
+    .boom-app-card .boom-card-text {
+      margin-top: 0.6rem;
+    }
+
+    /* SECTION 4 – SPECIFICATIONS / SAMPLE RANGE */
+    .boom-specs-section {
+      background: #13171d;
+    }
+
+    .boom-specs-grid {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .boom-spec-card {
+      background: #10151d;
+      border-radius: 10px;
+      padding: 1.4rem 1.3rem 1.6rem;
+      border: 1px solid #212b37;
+    }
+
+    .boom-spec-card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .boom-spec-summary {
+      font-size: 1.03rem;
+      color: #dfe5ee;
+      margin-bottom: 0.8rem;
+    }
+
+    .boom-spec-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 0.9rem;
+      font-size: 1.02rem;
+      line-height: 33px;
+    }
+
+    .boom-spec-list li::before {
+      content: "• ";
+      color: var(--clr-3);
+    }
+
+    /* card font rule */
+    .boom-spec-card .boom-card-text {
+      margin-top: 0.6rem;
+    }
+
+    /* SECTION 5 – RENTAL PROCESS & PRICING */
+    .boom-process-section {
+      background: #141414;
+    }
+
+    .boom-process-grid {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .boom-process-steps {
+      list-style: decimal;
+      padding-left: 1.4rem;
+      font-size: 1.05rem;
+    }
+
+    .boom-process-steps li {
+      margin-bottom: 0.7rem;
+    }
+
+    .boom-process-card {
+      background: #1a1515;
+      border-radius: 10px;
+      padding: 1.4rem 1.3rem;
+      border: 1px solid #2b1c1c;
+    }
+
+    .boom-process-card h3 {
+      margin-bottom: 0.6rem;
+    }
+
+    .boom-process-card p {
+      font-size: 1.02rem;
+    }
+
+    .boom-price-note {
+      font-size: 0.98rem;
+      color: #f3d7d7;
+      margin-top: 0.6rem;
+    }
+
+    /* SECTION 6 – FAQ */
+    .boom-faq-section {
+      background: #181111;
+    }
+
+    .boom-faq-grid {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .boom-faq-item {
+      background: #231818;
+      border-radius: 10px;
+      padding: 1.3rem 1.2rem 1.5rem;
+      border: 1px solid #322121;
+    }
+
+    .boom-faq-item h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .boom-faq-item p {
+      font-size: 1.03rem;
+      color: #f9eded;
+    }
+
+    /* ENQUIRY SECTION EMBED */
+    .boom-enquiry-wrap {
+      background: #1b1111;
+      padding-top: 3.4rem;
+      padding-bottom: 3.6rem;
+    }
+
+    .boom-enquiry-wrap .section-title {
+      text-align: center;
+    }
+
+    .boom-enquiry-header {
+      text-align: center;
+      margin-bottom: 1.9rem;
+    }
+
+    .boom-enquiry-header p {
+      margin: 0.5rem auto 0;
+      font-size: 1.05rem;
+      color: #d3c9c9;
+      max-width: 40rem;
+    }
+
+    /* SCROLL REVEAL */
+    .reveal-left,
+    .reveal-right,
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal-left {
+      transform: translateX(-26px);
+    }
+
+    .reveal-right {
+      transform: translateX(26px);
+    }
+
+    .reveal-visible {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+
+    /* ENQUIRY MODAL */
+    .enquiry-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 999;
+      padding: 1rem;
+    }
+
+    .enquiry-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .enquiry-modal-inner {
+      position: relative;
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      background: #0d131a;
+      border-radius: 8px;
+      border: 1px solid #2a333d;
+      padding: 1.4rem 1.2rem 1.7rem;
+    }
+
+    .enquiry-modal-close {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.6rem;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      border: none;
+      background: #222;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .boom-hero-grid {
+        grid-template-columns: minmax(0, 1.4fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      section {
+        min-height: auto;
+        padding: 2.8rem 0;
+        align-items: stretch;
+      }
+
+      .boom-types-grid,
+      .boom-app-grid,
+      .boom-specs-grid,
+      .boom-process-grid,
+      .boom-faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      h1.boom-hero-title {
+        font-size: 2.5rem;
+      }
+
+      .section-title {
+        font-size: 2.3rem;
+      }
+
+      .enquiry-modal-inner {
+        padding-inline: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR FRAGMENT -->
+  <div id="navbar"></div>
+
+  <main>
+    <!-- SECTION 1: HERO -->
+    <section class="boom-hero-section">
+      <div class="container">
+        <div class="boom-hero-grid">
+          <div class="reveal-left">
+            <div class="boom-hero-eyebrow">
+              Articulated & Telescopic Boom Lift Rentals · Mumbai Region
+            </div>
+            <h1 class="boom-hero-title">
+              Boom Lift Rentals in Mumbai for Safe Work at Height.
+            </h1>
+            <p class="boom-hero-subtitle">
+              Hire diesel and electric boom lifts for industrial, commercial and infrastructure work
+              across Mumbai, Navi Mumbai and Thane. Our fleet includes articulated boom lifts for
+              tight access and telescopic boom lifts for straight, high reach applications.
+            </p>
+            <p class="boom-hero-meta">
+              UP-AND-OVER ACCESS · LONG HORIZONTAL REACH · PROJECT-READY MACHINES
+            </p>
+            <div class="boom-hero-actions">
+              <a href="#boom-enquiry" class="btn btn-primary">
+                Get a boom lift quote
+              </a>
+              <a href="#" class="btn btn-outline js-open-enquiry">
+                Quick boom lift enquiry
+              </a>
+            </div>
+          </div>
+
+          <aside class="boom-hero-image-card reveal-right">
+            <!-- Replace with real boom lift image -->
+            <img
+              src="./images/006.webp"
+              alt="Boom lift working at height in Mumbai"
+              class="boom-hero-img"
+            />
+            <p class="boom-hero-img-caption">
+              Typical boom lift application in Mumbai – façade works, MEP installation,
+              signage and shutdown maintenance.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: TYPES OF BOOM LIFTS -->
+    <section class="boom-types-section">
+      <div class="container">
+        <div class="reveal-left">
+          <div class="section-label">Boom lift categories</div>
+          <h2 class="section-title">Articulated & Telescopic Boom Lifts for Your Mumbai Site.</h2>
+          <p class="section-intro">
+            Choose from articulated boom lifts for flexible up-and-over reach or telescopic boom lifts
+            for straight, long-distance outreach. Our team will help match the right category based
+            on obstacles, working height and ground conditions at your site in Mumbai.
+          </p>
+        </div>
+
+        <div class="boom-types-grid">
+          <article class="boom-type-card reveal-left">
+            <h3>Articulated Boom Lifts</h3>
+            <p>
+              Ideal when you need to reach up and over obstacles such as pipe racks, roofing,
+              canopies or machinery inside factories and commercial buildings.
+            </p>
+            <ul>
+              <li>Up-and-over outreach around structures</li>
+              <li>Better maneuverability in tight spaces</li>
+              <li>Electric & diesel options for indoor / outdoor use</li>
+            </ul>
+            <p class="boom-type-meta">
+              Typical working heights for articulated boom lifts range from approx. 40 ft to 135 ft,
+              with platform capacities suited for tools and two operators.
+            </p>
+            <a href="#boom-enquiry" class="btn btn-primary js-open-enquiry">
+              Enquire for articulated boom lifts
+            </a>
+          </article>
+
+          <article class="boom-type-card reveal-right">
+            <h3>Telescopic Boom Lifts</h3>
+            <p>
+              Best for open areas where you need maximum horizontal outreach and high vertical access
+              on construction, refinery, port and infrastructure jobs in Mumbai.
+            </p>
+            <ul>
+              <li>Straight-line reach to high elevations</li>
+              <li>High stability for rough outdoor terrain</li>
+              <li>Ideal for bridges, chimneys, tanks & metros</li>
+            </ul>
+            <p class="boom-type-meta">
+              Telescopic booms are commonly used where working heights can exceed 100 ft, enabling
+              safe access for heavy-duty industrial and infrastructure projects.
+            </p>
+            <a href="#boom-enquiry" class="btn btn-primary js-open-enquiry">
+              Enquire for telescopic boom lifts
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: APPLICATIONS WITH IMAGES -->
+    <section class="boom-applications-section">
+      <div class="container">
+        <div class="reveal-left">
+          <div class="section-label">Where boom lifts help</div>
+          <h2 class="section-title">Typical Boom Lift Applications Across Mumbai.</h2>
+          <p class="section-intro">
+            Boom lifts reduce setup time compared to scaffolding and give your teams a stable platform
+            to work at height. Here are just a few ways contractors use our machines in and around Mumbai.
+          </p>
+        </div>
+
+        <div class="boom-app-grid">
+          <article class="boom-app-card reveal-left">
+            <img
+              src="images/boom-app-facade.jpg"
+              alt="Façade and glazing work in Mumbai"
+              class="boom-app-img"
+            />
+            <h3>Façade & Glazing</h3>
+            <p>
+              Ideal for glass replacement, façade cleaning and cladding installation on commercial towers,
+              IT parks and retail developments.
+            </p>
+            <p class="boom-card-text">
+              Andheri · BKC · Lower Parel · Navi Mumbai
+            </p>
+          </article>
+
+          <article class="boom-app-card reveal-up">
+            <img
+              src="images/boom-app-industrial.jpg"
+              alt="Industrial plant shutdown work"
+              class="boom-app-img"
+            />
+            <h3>Industrial & Shutdown Work</h3>
+            <p>
+              Reach stacks, pipe racks, tanks and structures during planned shutdowns at plants and refineries
+              across the Mumbai region.
+            </p>
+            <p class="boom-card-text">
+              Thane · Taloja · Rabale · Ambernath
+            </p>
+          </article>
+
+          <article class="boom-app-card reveal-right">
+            <img
+              src="images/boom-app-infra.jpg"
+              alt="Infrastructure boom lift work"
+              class="boom-app-img"
+            />
+            <h3>Infrastructure & Metro</h3>
+            <p>
+              Support finishing, inspection and maintenance at metro stations, bridges and flyovers
+              where controlled access to height is critical.
+            </p>
+            <p class="boom-card-text">
+              Mumbai Metro · Flyovers · Coastal Projects
+            </p>
+          </article>
+        </div>
+
+        <div style="margin-top:2rem;" class="reveal-up">
+          <a href="#" class="btn btn-primary js-open-enquiry">
+            Share your boom lift requirement
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SPECIFICATIONS / SAMPLE RANGE -->
+    <section class="boom-specs-section">
+      <div class="container">
+        <div class="reveal-left">
+          <div class="section-label">Sample working height ranges</div>
+          <h2 class="section-title">Boom Lifts for Medium, High & Ultra-High Reach.</h2>
+          <p class="section-intro">
+            Our Mumbai boom lift fleet includes models suitable for medium-height maintenance up to
+            ultra-high reach applications. Exact specifications vary by brand and model, but the
+            categories below give a sense of what’s possible.
+          </p>
+        </div>
+
+        <div class="boom-specs-grid">
+          <article class="boom-spec-card reveal-left">
+            <h3>Medium Reach</h3>
+            <p class="boom-spec-summary">
+              Suitable for warehouse, commercial and light industrial work.
+            </p>
+            <ul class="boom-spec-list">
+              <li>Approx. working height: 40–60 ft*</li>
+              <li>Indoor / outdoor articulated boom options</li>
+              <li>Compact dimensions for tighter access</li>
+            </ul>
+            <p class="boom-card-text">
+              Ideal for malls, IT parks, mid-rise buildings and general maintenance work in Mumbai.
+            </p>
+          </article>
+
+          <article class="boom-spec-card reveal-up">
+            <h3>High Reach</h3>
+            <p class="boom-spec-summary">
+              For construction and shutdown work requiring higher elevation.
+            </p>
+            <ul class="boom-spec-list">
+              <li>Approx. working height: 60–120 ft*</li>
+              <li>Articulated & telescopic boom configurations</li>
+              <li>Diesel power for outdoor sites</li>
+            </ul>
+            <p class="boom-card-text">
+              Common for refineries, power plants and infrastructure jobs in and around Mumbai.
+            </p>
+          </article>
+
+          <article class="boom-spec-card reveal-right">
+            <h3>Ultra-High Reach</h3>
+            <p class="boom-spec-summary">
+              For specialist tasks where extreme height and outreach are needed.
+            </p>
+            <ul class="boom-spec-list">
+              <li>Approx. working height: 120 ft and above*</li>
+              <li>Designed for heavy-duty industrial applications</li>
+              <li>Advanced safety and stabilization features</li>
+            </ul>
+            <p class="boom-card-text">
+              Discuss ultra-high reach requirements with our team so we can propose the
+              right configuration and deployment plan for your Mumbai site.
+            </p>
+          </article>
+        </div>
+
+        <p style="margin-top:0.9rem;font-size:0.95rem;color:#c6d0de;">
+          *Working height ranges are indicative and depend on the specific machine model supplied for your project.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 5: RENTAL PROCESS & PRICING -->
+    <section class="boom-process-section">
+      <div class="container">
+        <div class="reveal-left">
+          <div class="section-label">How boom lift rentals work</div>
+          <h2 class="section-title">Simple, Transparent Rental Process in Mumbai.</h2>
+          <p class="section-intro">
+            Whether you’re booking a single day’s rental or a multi-month project, we keep the
+            process clear and focused on keeping your team productive at height.
+          </p>
+        </div>
+
+        <div class="boom-process-grid">
+          <div class="reveal-left">
+            <ol class="boom-process-steps">
+              <li>Share your site location in Mumbai and job details (height, reach, duration).</li>
+              <li>We suggest the boom lift category (articulated or telescopic) that suits your access needs.</li>
+              <li>Receive a rental quote with optional operator support and mobilisation details.</li>
+              <li>Schedule delivery and site induction as per your shift timing and permits.</li>
+              <li>On-call coordination for extensions, re-deployment and additional machines.</li>
+            </ol>
+            <div style="margin-top:1.6rem;">
+              <a href="#boom-enquiry" class="btn btn-primary">
+                Start your boom lift enquiry
+              </a>
+            </div>
+          </div>
+
+          <aside class="boom-process-card reveal-right">
+            <h3>Rental durations & budgets</h3>
+            <p>
+              We handle short-term rentals for emergency work, weekly rentals for
+              shutdown activities and long-term rentals for projects and maintenance contracts.
+            </p>
+            <p class="boom-price-note">
+              Daily and monthly rates depend on working height, configuration,
+              site distance and whether you need an operator. Share your requirement
+              and we’ll revert with a Mumbai-specific quote.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: FAQ -->
+    <section class="boom-faq-section">
+      <div class="container">
+        <div class="reveal-left">
+          <div class="section-label">Boom lift FAQs</div>
+          <h2 class="section-title">Questions Mumbai Teams Commonly Ask.</h2>
+          <p class="section-intro">
+            A few quick answers that help when you’re planning boom lift rentals for your next project.
+          </p>
+        </div>
+
+        <div class="boom-faq-grid">
+          <article class="boom-faq-item reveal-left">
+            <h3>What information do you need to suggest a boom lift?</h3>
+            <p>
+              We typically need working height, approximate outreach, indoor or outdoor usage,
+              ground conditions, access constraints and your expected rental duration.
+              Site photos or sketches from your Mumbai project help us suggest the safest option.
+            </p>
+          </article>
+
+          <article class="boom-faq-item reveal-up">
+            <h3>Do you provide operators along with the boom lifts?</h3>
+            <p>
+              Yes, operator support can be included based on availability and job requirement.
+              We can also coordinate with your safety team for basic orientation and controls
+              familiarisation if your own certified operators will use the machine.
+            </p>
+          </article>
+
+          <article class="boom-faq-item reveal-right">
+            <h3>Can boom lifts be used at night or during shutdowns?</h3>
+            <p>
+              Many Mumbai projects run night shifts or tight shutdown windows. We’ll plan
+              mobilisation, fueling and support to match your work schedule, subject to
+              site access, permissions and safety norms.
+            </p>
+          </article>
+
+          <article class="boom-faq-item reveal-up">
+            <h3>How far in advance should I book a boom lift?</h3>
+            <p>
+              For standard heights, we can often support on short notice, but for
+              high-reach or specialised booms it’s best to block machines in advance
+              so availability and logistics are secured for your dates.
+            </p>
+          </article>
+        </div>
+
+        <div style="margin-top:2rem;" class="reveal-up">
+          <a href="#" class="btn btn-primary js-open-enquiry">
+            Ask a specific boom lift question
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: EMBEDDED ENQUIRY FORM (FRAGMENT) -->
+    <section class="boom-enquiry-wrap" id="boom-enquiry">
+      <div class="container">
+        <div class="boom-enquiry-header reveal-up">
+          <div class="section-label">Boom lift rental enquiry – Mumbai</div>
+          <h2 class="section-title">Tell Us About the Boom Lift You Need.</h2>
+          <p>
+            Use the enquiry form below to share your project details. Our team will respond with
+            the recommended boom lift category and a customised rental quote for your Mumbai site.
+          </p>
+        </div>
+
+        <!-- form.html will be loaded here -->
+        <div id="boom-enquiry-form"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER FRAGMENT -->
+  <div id="footer"></div>
+
+  <!-- MODAL FOR POPUP ENQUIRY (ALSO USES form.html) -->
+  <div class="enquiry-modal" id="enquiry-modal">
+    <div class="enquiry-modal-inner">
+      <button class="enquiry-modal-close js-close-enquiry" aria-label="Close enquiry form">✖</button>
+      <div id="popup-enquiry-form"></div>
+    </div>
+  </div>
+
+  <script>
+    // Fragment loader (navbar, footer, forms)
+    function loadFragment(targetId, url, callback) {
+      var container = document.getElementById(targetId);
+      if (!container) return;
+
+      fetch(url)
+        .then(function (response) {
+          return response.text();
+        })
+        .then(function (html) {
+          container.innerHTML = html;
+          if (typeof callback === "function") {
+            callback();
+          }
+        })
+        .catch(function (error) {
+          console.error("Error loading fragment:", url, error);
+        });
+    }
+
+    // NAVBAR BEHAVIOUR (same pattern as index)
+    function initNavbarBehaviour() {
+      var header = document.querySelector(".site-header");
+      var toggle = document.querySelector(".navbar__toggle");
+      var mobileMenu = document.querySelector(".navbar-mobile");
+
+      if (!header || !toggle || !mobileMenu) return;
+
+      function openMenu() {
+        header.classList.add("site-header--menu-open");
+        toggle.classList.add("navbar__toggle--active");
+      }
+
+      function closeMenu() {
+        header.classList.remove("site-header--menu-open");
+        toggle.classList.remove("navbar__toggle--active");
+      }
+
+      toggle.addEventListener("click", function () {
+        if (header.classList.contains("site-header--menu-open")) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      mobileMenu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", closeMenu);
+      });
+    }
+
+    // SCROLL REVEAL
+    function initScrollReveal() {
+      var revealEls = [].slice.call(
+        document.querySelectorAll(".reveal-left, .reveal-right, .reveal-up")
+      );
+
+      if (!("IntersectionObserver" in window)) {
+        revealEls.forEach(function (el) {
+          el.classList.add("reveal-visible");
+        });
+        return;
+      }
+
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("reveal-visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      revealEls.forEach(function (el) {
+        observer.observe(el);
+      });
+    }
+
+    // POPUP ENQUIRY LOGIC
+    function initEnquiryModal() {
+      var modal = document.getElementById("enquiry-modal");
+      if (!modal) return;
+
+      function openEnquiryModal(e) {
+        if (e) e.preventDefault();
+        modal.classList.add("open");
+      }
+
+      function closeEnquiryModal() {
+        modal.classList.remove("open");
+      }
+
+      // Buttons with js-open-enquiry
+      var ctaButtons = document.querySelectorAll(".js-open-enquiry");
+      ctaButtons.forEach(function (btn) {
+        btn.addEventListener("click", function (e) {
+          openEnquiryModal(e);
+        });
+      });
+
+      // Close buttons
+      var closeButtons = document.querySelectorAll(".js-close-enquiry");
+      closeButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          closeEnquiryModal();
+        });
+      });
+
+      // Click on overlay to close
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          closeEnquiryModal();
+        }
+      });
+    }
+
+    // INIT ON LOAD
+    document.addEventListener("DOMContentLoaded", function () {
+      loadFragment("navbar", "navbar.html", function () {
+        initNavbarBehaviour();
+      });
+
+      loadFragment("footer", "footer.html");
+      loadFragment("boom-enquiry-form", "form.html", function () {
+        initScrollReveal();
+      });
+      loadFragment("popup-enquiry-form", "form.html");
+
+      initScrollReveal();
+      initEnquiryModal();
+    });
+  </script>
+</body>
+</html>
