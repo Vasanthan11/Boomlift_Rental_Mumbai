@@ -2,10 +2,10 @@
 // send-enquiry.php
 // Handles enquiry form submissions for Boomlift Rentals Mumbai
 
-// CONFIGURATION – CHANGE THIS IF NEEDED
-$toEmail = "info@boomliftrentalsmumbai.com";  // Where enquiries will be sent
+// CONFIGURATION
+$toEmail = "info@boomliftrentalsmumbai.com";   // Receiving email
 $fromName = "Boomlift Rentals Mumbai Website";
-$redirectUrl = "thank-you.html";  // Optional — create this page or leave empty
+$redirectUrl = "thank-you.html";               // Redirect page after success
 
 // Helper sanitizing function
 function sanitize($data)
@@ -13,26 +13,22 @@ function sanitize($data)
     return htmlspecialchars(trim($data), ENT_QUOTES, 'UTF-8');
 }
 
-// Only handle POST requests
+// Handle only POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    // Match EXACT form field names:
-    $name     = sanitize($_POST["name"] ?? "");
-    $email    = sanitize($_POST["email"] ?? "");
-    $phone    = sanitize($_POST["phone"] ?? "");
-    $location = sanitize($_POST["location"] ?? "");
+    // Form fields
+    $name      = sanitize($_POST["name"] ?? "");
+    $phone     = sanitize($_POST["phone"] ?? "");
+    $email     = sanitize($_POST["email"] ?? "");
+    $location  = sanitize($_POST["location"] ?? "");
     $equipment = sanitize($_POST["equipment"] ?? "");
 
-    // Validation
+    // Validation — ONLY Name & Phone required
     $errors = [];
-    if ($name === "") $errors[] = "Full Name is required.";
-    if ($email === "" || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "A valid Email Address is required.";
-    }
+    if ($name === "")  $errors[] = "Full Name is required.";
     if ($phone === "") $errors[] = "Contact Number is required.";
-    if ($location === "") $errors[] = "Area / Location is required.";
-    if ($equipment === "") $errors[] = "Please select an equipment type.";
 
+    // Return errors if any
     if (!empty($errors)) {
         http_response_code(400);
         echo "<h2>There was a problem:</h2><ul>";
@@ -48,18 +44,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 New enquiry received:
 
 Full Name: $name
-Email: $email
 Phone: $phone
+Email: $email
 Location: $location
 Equipment: $equipment
 
 Time: " . date("Y-m-d H:i:s");
 
-    // Email Headers
-    $headers = "From: $fromName <$toEmail>\r\n";
-    $headers .= "Reply-To: $name <$email>\r\n";
+    // Email headers
+    $headers = "From: $fromName <" . $toEmail . ">\r\n";
+    if ($email !== "") {
+        $headers .= "Reply-To: $email\r\n";
+    }
 
-    // Send Email
+    // Send the email
     if (mail($toEmail, $subject, $body, $headers)) {
         if (!empty($redirectUrl)) {
             header("Location: $redirectUrl");
